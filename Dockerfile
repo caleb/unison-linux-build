@@ -68,6 +68,7 @@ RUN opam init --comp 4.03.0 -a
 
 ADD unison-2.48.4.tar.gz /
 RUN cd /src \
+&&  eval `opam config env` \
 &&  make UISTYLE=text NATIVE=true STATIC=true \
 &&  mv unison /usr/local/bin \
 &&  mv unison-fsmonitor /usr/local/bin

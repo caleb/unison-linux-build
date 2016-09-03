@@ -19,3 +19,4 @@ version="$(docker run --rm unison /bin/bash -c "unison -version | sed -e 's| ver
 echo "Creating ${version}-linux-x86_64.tar.gz"
 
 tar czf ../"${version}-linux-x86_64.tar.gz" usr
+cd ..
