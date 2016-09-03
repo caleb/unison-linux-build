@@ -61,8 +61,10 @@ RUN mkdir -p /var/run/sshd \
 &&  echo "PATH=\"$PATH\"" >> /etc/profile
 
 RUN apt-get update
-RUN apt-get install -y build-essential ocaml
+RUN apt-get install -y build-essential opam m4 mercurial darcs
 RUN apt-get install -y emacs-nox
+
+RUN opam init --comp 4.03.0 -a
 
 ADD unison-2.48.4.tar.gz /
 RUN cd /src \
